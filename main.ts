@@ -11,23 +11,26 @@ basic.forever(function () {
             . . # . .
             . . # . .
             `)
+        music.playMelody("C D E - C D E - ", 120)
     } else {
         if (input.compassHeading() < 180) {
             basic.showLeds(`
-                . . # . .
-                . # . . .
-                # . . . .
-                . # . . .
-                . . # . .
-                `)
-        } else {
-            basic.showLeds(`
-                . . # . .
-                . . . # .
                 . . . . #
                 . . . # .
                 . . # . .
+                . . . # .
+                . . . . #
                 `)
+            music.playTone(262, music.beat(BeatFraction.Whole))
+        } else {
+            basic.showLeds(`
+                # . . . .
+                . # . . .
+                . . # . .
+                . # . . .
+                # . . . .
+                `)
+            music.playTone(494, music.beat(BeatFraction.Whole))
         }
     }
 })
